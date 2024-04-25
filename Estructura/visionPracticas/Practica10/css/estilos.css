@@ -1,0 +1,23 @@
+.contenedor{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.caja{
+    text-align: center;
+    border: solid 3px #000;
+    width: 200px;
+    height: 400px;
+}
+.caja2{
+    border: solid 1px #000;
+}
+.letra{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
