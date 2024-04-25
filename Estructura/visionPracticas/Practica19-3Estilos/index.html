@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTILOS</title>
+    <link rel="icon" type="png" href="img/avatar.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h1><center>VISIONAR PRACTICAS</center></h1>
+                <div class="contenedor">
+                    <container class="visionaje">
+                        <div class="practicas">
+                            <a onclick="verificarExistencia(event, 'practicas/Practica19-M1/index.html')" href="javascript:void(0)">
+                            <img src="img/p19-M1.png">
+                            <h1 class="PRA">Practica 19 Modo-1</h1>
+                            </a>
+                        </div>
+                        <div class="practicas">
+                            <a onclick="verificarExistencia(event, 'practicas/Practica19-M2/index.html')" href="javascript:void(0)">
+                            <img src="img/p19-M2.png">
+                            <h1 class="PRA">Practica 19 Modo-2</h1>
+                            </a>
+                        </div>
+                        <div class="practicas">
+                            <a onclick="verificarExistencia(event, 'practicas/Practica19-M3/index.html')" href="javascript:void(0)">
+                            <img src="img/p19-M3.png">
+                            <h1 class="PRA">Practica 19 Modo-3</h1>
+                            </a>
+                        </div>
+                    </container>
+                </div>
+                <script>
+                    var enlacesDescarga = document.querySelectorAll('.descarga');
+                    // Itera sobre cada enlace y agrega el evento de clic
+                    enlacesDescarga.forEach(function(enlace) {
+                    enlace.addEventListener('click', function(event) {
+                      event.preventDefault(); // Evita la descarga automática
+                      var url = this.getAttribute('href'); // Obtiene la URL del enlace
+                    
+                    // Realiza una solicitud HEAD para verificar la existencia del archivo
+                      var xhr = new XMLHttpRequest();
+                      xhr.open('HEAD', url, true);
+                      xhr.onreadystatechange = function() {
+                          if (xhr.readyState === 4) {
+                              if (xhr.status === 200) {
+                                  bien(); // Si el archivo existe, ejecuta la función bien()
+                                  window.location.href = url; // Inicia la descarga del archivo
+                              } else {
+                                  error(); // Si el archivo no existe, ejecuta la función error()
+                              }
+                          }
+                      };
+                      xhr.send(); // Envía la solicitud HEAD
+                    });
+                    });   
+                    function error(){
+                    Swal.fire({
+                      title: "Error",
+                      html: `<div class="textoA">No existe el archivo</div>`,
+                      icon: "error",
+                      confirmButtonText: '<div class="botonA">Aceptar</div>',
+                      footer: '<a href="" class="pieA" id="linkProblema">Porque tengo este problema?</a>',
+                      timer: 5000,
+                      customClass: {
+                          title: 'tituloA',
+                      }
+                    });
+                    document.getElementById("linkProblema").addEventListener("click", function(event) {
+                      event.preventDefault();
+                      porque();
+                    });
+                    }
+                    function bien(){
+                    Swal.fire({
+                          position: "top-start",
+                          title: "Descargada",
+                          html: `<div class="textoA">El archivo se a descargado correctamente</div>`,
+                          icon: "success",
+                          showConfirmButton: false,
+                          timer: 2000,
+                          customClass: {
+                              title: 'tituloA',
+                          }
+                      });
+                    }
+                    function porque(){
+                      Swal.fire({
+                          title: "¿Porque el problema?",
+                          html: `<div class="textoA">Esto se debe por varias circunstancias<br><br><li>Puede que el archivo no exista porque todavia esta siendo desarrollado o puede que el archivo no se haya subido bien en estos casos es mejor esperar ya que la pagina se actualiza constantemente y este problema se puede solucionar.</li></div>`,
+                          footer: '<div class="pieA">Gracias por su atencion</div>',
+                          icon: "question",
+                          confirmButtonText: '<div class="botonA">Aceptar</div>',
+                    
+                          customClass: {
+                              title: 'tituloA',
+                          }
+                      });
+                    }
+                    function verificarExistencia(event, url) {
+                     event.preventDefault(); // Detiene el comportamiento predeterminado del enlace
+                 
+                     fetch(url)
+                     .then(response => {
+                         if (!response.ok) {
+                             // Si el archivo no existe, muestra un mensaje de error
+                             error2();
+                             return Promise.reject();
+                         } else {
+                             // Si el archivo existe, abre una nueva pestaña con la URL
+                             window.open(url, '_blank');
+                         }
+                     })
+                     .catch(error => {
+                         // Si hubo un error en la verificación, muestra un mensaje de error
+                         error2();
+                     });
+                 }
+                 
+                 function error2(){
+                     Swal.fire({
+                         title: "Error",
+                         html: `<div class="textoA">El archivo que quieres visionar no está disponible</div>`,
+                         icon: "error",
+                         confirmButtonText: '<div class="botonA">Aceptar</div>',
+                         footer: '<a href="" class="pieA" id="linkProblema">Porque tengo este problema?</a>',
+                         customClass: {
+                             title: 'tituloA',
+                         }
+                     });
+                     document.getElementById("linkProblema").addEventListener("click", function(event) {
+                             event.preventDefault();
+                             porque();
+                         });
+                 }
+         </script>
+</body>
+</html>

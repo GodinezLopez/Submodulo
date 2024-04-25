@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESCARGAS</title>
+    <link rel="icon" type="png" href="img/avatar.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <h2 class="letraP"><div class="sede">▼ SECCION DE DESCARGAS PRACTICA 19▼</div></h2>
+                <div class="contenedor">
+                    <container class="botones">
+                        <a class="btn-neon descarga" href="downloadP/Practica19-M1.zip" download>
+                            Practica 19-MODO 1 
+                        </a>
+                        <a class="btn-neon descarga" href="downloadP/Practica19-M2.zip" download>
+                            Practica 19-MODO 2
+                        </a>
+                        <a class="btn-neon descarga" href="downloadP/Practica19-M3.zip" download>
+                            Practica 19-MODO 3
+                        </a>
+                </container>
+                </div>
+                <script>
+                    var enlacesDescarga = document.querySelectorAll('.descarga');
+                    enlacesDescarga.forEach(function(enlace) {
+                    enlace.addEventListener('click', function(event) {
+                      event.preventDefault();
+                      var url = this.getAttribute('href'); 
+                      var xhr = new XMLHttpRequest();
+                      xhr.open('HEAD', url, true);
+                      xhr.onreadystatechange = function() {
+                          if (xhr.readyState === 4) {
+                              if (xhr.status === 200) {
+                                  bien(); 
+                                  window.location.href = url;
+                              } else {
+                                  error(); 
+                              }
+                          }
+                      };
+                      xhr.send(); 
+                    });
+                    });   
+                    function error(){
+                    Swal.fire({
+                      title: "Error",
+                      html: `<div class="textoA">No existe el archivo</div>`,
+                      icon: "error",
+                      confirmButtonText: '<div class="botonA">Aceptar</div>',
+                      footer: '<a href="" class="pieA" id="linkProblema">Porque tengo este problema?</a>',
+                      timer: 5000,
+                      customClass: {
+                          title: 'tituloA',
+                      }
+                    });
+                    document.getElementById("linkProblema").addEventListener("click", function(event) {
+                      event.preventDefault();
+                      porque();
+                    });
+                    }
+                    function bien(){
+                    Swal.fire({
+                          position: "top-start",
+                          title: "Descargada",
+                          html: `<div class="textoA">El archivo se a descargado correctamente</div>`,
+                          icon: "success",
+                          showConfirmButton: false,
+                          timer: 1500,
+                          customClass: {
+                              title: 'tituloA',
+                          }
+                      });
+                    }
+                    function porque(){
+                      Swal.fire({
+                          title: "¿Porque el problema?",
+                          html: `<div class="textoA">Esto se debe por varias circunstancias<br><br><li>Puede que el archivo no exista porque todavia esta siendo desarrollado o puede que el archivo no se haya subido bien en estos casos es mejor esperar ya que la pagina se actualiza constantemente y este problema se puede solucionar.</li></div>`,
+                          footer: '<div class="pieA">Gracias por su atencion</div>',
+                          icon: "question",
+                          confirmButtonText: '<div class="botonA">Aceptar</div>',
+                    
+                          customClass: {
+                              title: 'tituloA',
+                          }
+                      });
+                    }
+         </script>
+</body>
+</html>
