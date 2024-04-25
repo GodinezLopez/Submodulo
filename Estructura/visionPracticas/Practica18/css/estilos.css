@@ -1,0 +1,70 @@
+.contenedor{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.caja{
+    text-align: center;
+    border: solid 3px #000;
+    width: 200px;
+    height: 400px;
+}
+.caja2{
+    border: solid 1px #000;
+}
+.letra{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+.texto{
+    font-size: 35px;
+}
+.contendor{
+    border: solid;
+}
+.botoncito{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #000;
+    color: #ffffff;
+    transition: 0.3s;
+}
+.botoncito:hover{
+    transform: scale(1.2);
+}
+.textoXD{
+    cursor: pointer;
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+.containerC{
+    border-radius: 10px;
+    background: #23f5cb;
+    border: solid 3px #000000;
+    width: 100%;
+}
+.carousel-inner{
+    justify-content: center;
+}
+.carousel-inner img{
+    border-radius: 10px;
+    width: 60%;
+    height: 450px;
+}
+.letra{
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+}
+.letraXDD{
+    color: rgb(0, 255, 42);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
