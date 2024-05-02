@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+}
+.C1, .C2, .C3, .C4, .C5, .C6, .C7, .C8, .C9{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 5px;
+    &.C1{
+        background: rgb(77, 77, 77);
+        padding-bottom: 30px;
+        color: #ffffff;
+    }
+    &.C2{
+        padding: 20px;
+        background: aquamarine;
+    }
+    &.C3{
+        padding: 20px;
+        background: blue;
+    }
+    &.C4{
+        background: chartreuse;
+        height: 500px;
+    }
+    &.C5{
+        background: orange;
+    }
+    &.C6{
+        height: 100px;
+        background: gray;
+    }
+    &.C7{
+        background: rgb(255, 0, 0);
+    }
+    &.C8{
+        font-size: 15px;
+        background: black;
+        color: #ffffff;
+        border: solid rgb(0, 174, 255);
+    }
+    &.C9{
+        background: teal;
+    }
+}
+.genero{
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+}
+.menu{
+    float: left;
+    margin-left: 50px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
