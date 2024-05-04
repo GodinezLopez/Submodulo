@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica24</title>
+</head>
+<body>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const edad = params.get('edad');
+        document.write("<center><h1>Hola " + nombre + " tienes " + edad + " años</h1></center>");
+    </script>
+</body>
+</html>
