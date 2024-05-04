@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica23</title>
+</head>
+<body>
+    <center><h1>Esta es la forma de imprimir mensajes PHP Yael Godinez</h1></center>
+    <h1>
+        Hola Yael Godinez <br><br>
+        Eres un Hombre de 17 anios <br><br>
+    </h1>
+    <h1>La fecha de hoy es <span id="fecha"></span></h1>
+    <script>
+        var fechaActual = new Date();
+        var dia = fechaActual.getDate();
+        var mes = fechaActual.getMonth() + 1;
+        var anio = fechaActual.getFullYear();
+        if (dia < 10) {
+            dia = '0' + dia;
+        }
+        if (mes < 10) {
+            mes = '0' + mes;
+        }
+        var fechaFormateada = dia + '/' + mes + '/' + anio;
+        document.getElementById("fecha").innerHTML = fechaFormateada;
+    </script>
+</body>
+</html>
